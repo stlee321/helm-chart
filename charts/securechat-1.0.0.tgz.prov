@@ -1,0 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.0.0
+description: A Helm chart for securechat
+name: securechat
+type: application
+version: 1.0.0
+
+...
+files:
+  securechat-1.0.0.tgz: sha256:6b8c8d7e94cc510572937d98f78ed3dfe6f08858e0ff22bacbef85f7b586233b
+-----BEGIN PGP SIGNATURE-----
+
+wl4EAREKABAFAmWp2IIJEK3I+RnbVrVEAADjGQEAaOa6jSahnSkdlVD9wkPIZFV5
+CaRElf2bZqLZiPAbtAsBABVZ/0g+kfsMlFkl1Z/KePsopRpoFS1CJhy5y9vTJ1ej
+=8Sng
+-----END PGP SIGNATURE-----
