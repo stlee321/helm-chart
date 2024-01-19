@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.server.deployment.name}}
+  namespace: {{.Values.namespace}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.server.pod.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.server.pod.label }}
+    spec:
+      containers:
+        - name: {{ .Values.server.app.containerName }}
+          image: {{.Values.server.image}}
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: {{ .Values.server.envSecretName }}
+        - name: {{ .Values.server.rabbitmq.containerName }}
+          image: {{.Values.server.rabbitmq.image}}
+          ports:
+            - containerPort: 5672
+            - containerPort: 15672
+            - containerPort: 61613
+      {{- if .Values.server.imagePullSecretsName }}
+      imagePullSecrets:
+        - name: {{ .Values.server.imagePullSecretsName }}
+      {{- end }}

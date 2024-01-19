@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.server.deployment.name }}
+  namespace: {{.Values.namespace}}
+  labels:
+    app: {{ .Values.server.pod.label }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.server.pod.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.server.pod.label }}
+    spec:
+      initContainers:
+        - name: check-redis-liveness
+          image: redis:latest
+          command:
+            [
+              "sh",
+              "-c",
+              "until redis-cli -h $REDIS_HOST -p 6379 ping; do sleep 1; done;",
+            ]
+          env:
+            - name: REDIS_HOST
+              value: {{.Values.envSecret.redis.host}}
+      containers:
+        - name: {{ .Values.server.app.containerName }}
+          image: {{.Values.server.image}}
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: {{ .Values.server.envSecretName }}
+      {{- if .Values.server.imagePullSecretsName }}
+      imagePullSecrets:
+        - name: {{ .Values.server.imagePullSecretsName }}
+      {{- end }}

@@ -1,0 +1,56 @@
+namespace: instatube
+
+client:
+  deployment:
+    name: instatube-client-deploy
+  pod:
+    label: instatube-client
+  app:
+    containerName: instatube-client
+  service:
+    name: instatube-client-svc
+    type: LoadBalancer
+  imagePullSecretsName: instatube-registry-credential
+  image: ghcr.io/stlee321/instatube/instatube-client:1.0.0
+
+server:
+  deployment:
+    name: instatube-server-deploy
+  pod:
+    label: instatube-server
+  app:
+    containerName: instatube-server
+  service:
+    name: instatube-server-svc
+    type: LoadBalancer
+  envSecretName: instatube-secret
+  imagePullSecretsName: instatube-registry-credential
+  image: ghcr.io/stlee321/instatube/instatube-server:1.0.0
+
+redis:
+  deployment:
+    name: instatube-redis-deploy
+  pod:
+    label: instatube-redis
+  app:
+    containerName: instatube-redis
+  service:
+    name: instatube-redis-svc
+    type: ClusterIP
+  image: redis:latest
+
+ingress:
+  enabled: false
+  name: instatube-ingress
+  clientService:
+    name: instatube-client-svc
+    port: 8081
+  serverService:
+    name: instatube-server-svc
+    port: 8080
+
+envSecret:
+  secretName: instatube-secret
+
+imagePullSecrets:
+  name: instatube-registry-credential

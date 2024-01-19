@@ -1,0 +1,46 @@
+namespace: securechat
+
+client:
+  deployment:
+    name: securechat-client-deploy
+  pod:
+    label: securechat-client
+  app:
+    containerName: securechat-client
+  service:
+    type: LoadBalancer
+    name: securechat-client-svc
+  image: ghcr.io/stlee321/securechat/securechat-client:1.0.0
+
+server:
+  deployment:
+    name: securechat-server-deploy
+  pod:
+    label: securechat-server
+  app:
+    containerName: securechat-server
+  service:
+    type: LoadBalancer
+    name: securechat-server-svc
+  image: ghcr.io/stlee321/securechat/securechat-server:1.0.0
+  envSecretName: securechat-secret
+  rabbitmq:
+    containerName: rabbit-stomp
+    image: ghcr.io/stlee321/securechat/rabbit-stomp:1.0.0
+
+
+ingress:
+  enabled: false
+  name: securechat-ingress
+  clientService:
+    name: securechat-client-svc
+    port: 8081
+  serverService:
+    name: securechat-server-svc
+    port: 8080
+
+imagePullSecrets:
+  name: securechat-regcred
+
+envSecret:
+  secretName: securechat-secret

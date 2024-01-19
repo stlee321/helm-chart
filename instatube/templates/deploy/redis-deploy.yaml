@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.redis.deployment.name }}
+  namespace: {{.Values.namespace}}
+  labels:
+    app: {{ .Values.redis.pod.label }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.redis.pod.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.redis.pod.label }}
+    spec:
+      containers:
+        - name: {{ .Values.redis.app.containerName }}
+          image: {{.Values.redis.image}}
+          ports:
+            - containerPort: 6379
+      {{- if .Values.redis.imagePullSecretsName }}
+      imagePullSecrets:
+        - name: {{ .Values.redis.imagePullSecretsName }}
+      {{- end }}
