@@ -10,7 +10,7 @@ client:
   service:
     type: LoadBalancer
     name: securechat-client-svc
-  image: ghcr.io/stlee321/securechat/securechat-client:1.0.0
+  image: ghcr.io/stlee321/securechat/securechat-client:1.0.1
 
 server:
   deployment:
@@ -22,12 +22,11 @@ server:
   service:
     type: LoadBalancer
     name: securechat-server-svc
-  image: ghcr.io/stlee321/securechat/securechat-server:1.0.0
+  image: ghcr.io/stlee321/securechat/securechat-server:1.0.1
   envSecretName: securechat-secret
   rabbitmq:
     containerName: rabbit-stomp
     image: ghcr.io/stlee321/securechat/rabbit-stomp:1.0.0
-
 
 ingress:
   enabled: false
