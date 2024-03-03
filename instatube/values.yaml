@@ -11,7 +11,7 @@ client:
     name: instatube-client-svc
     type: LoadBalancer
   imagePullSecretsName: instatube-registry-credential
-  image: ghcr.io/stlee321/instatube/instatube-client:1.0.0
+  image: ghcr.io/stlee321/instatube/instatube-client:1.0.1
 
 server:
   deployment:
@@ -25,7 +25,7 @@ server:
     type: LoadBalancer
   envSecretName: instatube-secret
   imagePullSecretsName: instatube-registry-credential
-  image: ghcr.io/stlee321/instatube/instatube-server:1.0.0
+  image: ghcr.io/stlee321/instatube/instatube-server:1.0.1
 
 redis:
   deployment:
