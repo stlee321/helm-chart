@@ -4,7 +4,6 @@ metadata:
   name: {{ .Values.client.service.name }}
   namespace: {{.Values.namespace}}
 spec:
-  type: {{ .Values.client.service.type }}
   selector:
     app: {{ .Values.client.pod.label }}
   ports:

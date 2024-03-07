@@ -9,7 +9,6 @@ client:
     containerName: instatube-client
   service:
     name: instatube-client-svc
-    type: LoadBalancer
   imagePullSecretsName: instatube-registry-credential
   image: ghcr.io/stlee321/instatube/instatube-client:1.0.1
 
@@ -22,7 +21,6 @@ server:
     containerName: instatube-server
   service:
     name: instatube-server-svc
-    type: LoadBalancer
   envSecretName: instatube-secret
   imagePullSecretsName: instatube-registry-credential
   image: ghcr.io/stlee321/instatube/instatube-server:1.0.1
@@ -36,7 +34,6 @@ redis:
     containerName: instatube-redis
   service:
     name: instatube-redis-svc
-    type: ClusterIP
   image: redis:latest
 
 ingress:

@@ -4,7 +4,6 @@ metadata:
   name: {{ .Values.redis.service.name }}
   namespace: {{.Values.namespace}}
 spec:
-  type: {{ .Values.redis.service.type }}
   selector:
     app: {{ .Values.redis.pod.label }}
   ports:
