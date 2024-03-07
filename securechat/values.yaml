@@ -8,7 +8,6 @@ client:
   app:
     containerName: securechat-client
   service:
-    type: LoadBalancer
     name: securechat-client-svc
   image: ghcr.io/stlee321/securechat/securechat-client:1.0.1
 
@@ -20,7 +19,6 @@ server:
   app:
     containerName: securechat-server
   service:
-    type: LoadBalancer
     name: securechat-server-svc
   image: ghcr.io/stlee321/securechat/securechat-server:1.0.1
   envSecretName: securechat-secret
