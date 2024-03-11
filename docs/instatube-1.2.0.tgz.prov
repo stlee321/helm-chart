@@ -1,0 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.0.1
+description: A Helm chart for Instatube
+name: instatube
+type: application
+version: 1.2.0
+
+...
+files:
+  instatube-1.2.0.tgz: sha256:c557a3d1ab6a0a6e3d9fee1ca7147efba3c5304c7724f2a75fe7ae01c1fa4660
+-----BEGIN PGP SIGNATURE-----
+
+wl4EAREKABAFAmXut4YJEK3I+RnbVrVEAADrVAEAZnGkwzkMUS38SrhWO55QscjC
+jqGfEwRocLfdcER9lE0BAHgiGEK2yA8Dlh1EQ4oBCLUl2JXyC6QEz4KxSceslzQB
+=0Y/x
+-----END PGP SIGNATURE-----

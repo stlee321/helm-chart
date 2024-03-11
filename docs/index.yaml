@@ -3,7 +3,17 @@ entries:
   instatube:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-03-07T21:33:23.056298+09:00"
+    created: "2024-03-11T16:51:07.619372+09:00"
+    description: A Helm chart for Instatube
+    digest: c557a3d1ab6a0a6e3d9fee1ca7147efba3c5304c7724f2a75fe7ae01c1fa4660
+    name: instatube
+    type: application
+    urls:
+    - https://stlee321.github.io/helm-chart/instatube-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2024-03-11T16:51:07.619092+09:00"
     description: A Helm chart for Instatube
     digest: 5f47135b4c85c33d5693b56c9a897a9a63fc7f448da719a0c36a7508953d6855
     name: instatube
@@ -13,7 +23,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-03-07T21:33:23.055572+09:00"
+    created: "2024-03-11T16:51:07.618635+09:00"
     description: A Helm chart for Instatube
     digest: 6e9f0121c3ae9c0eb5c3e84518a8487285b5ae1a79340388b48c4dca99d8bbd2
     name: instatube
@@ -23,7 +33,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-07T21:33:23.055228+09:00"
+    created: "2024-03-11T16:51:07.618338+09:00"
     description: A Helm chart for Instatube
     digest: 332c92636dbd7599b36a2c0edb42747aa33f075d082da36384666011b592fee3
     name: instatube
@@ -34,7 +44,17 @@ entries:
   securechat:
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-03-07T21:33:23.058999+09:00"
+    created: "2024-03-11T16:51:07.620821+09:00"
+    description: A Helm chart for securechat
+    digest: 63b8a731454704c2b097ebc2d9938d80e5e546476c17f6dbb4938acb63b5d172
+    name: securechat
+    type: application
+    urls:
+    - https://stlee321.github.io/helm-chart/securechat-1.2.0.tgz
+    version: 1.2.0
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2024-03-11T16:51:07.620569+09:00"
     description: A Helm chart for securechat
     digest: 53fc2f2429399b12baf452cf03b454965a41edb73806183155dd2c9b1b7a8f40
     name: securechat
@@ -44,7 +64,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.1
-    created: "2024-03-07T21:33:23.058721+09:00"
+    created: "2024-03-11T16:51:07.61996+09:00"
     description: A Helm chart for securechat
     digest: eabce6503fd8a86c0b05ac018a8d32332b3c01440e6b3caca81c09aab91bf3cd
     name: securechat
@@ -54,7 +74,7 @@ entries:
     version: 1.0.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-07T21:33:23.058495+09:00"
+    created: "2024-03-11T16:51:07.619661+09:00"
     description: A Helm chart for securechat
     digest: 6b8c8d7e94cc510572937d98f78ed3dfe6f08858e0ff22bacbef85f7b586233b
     name: securechat
@@ -62,4 +82,4 @@ entries:
     urls:
     - https://stlee321.github.io/helm-chart/securechat-1.0.0.tgz
     version: 1.0.0
-generated: "2024-03-07T21:33:23.054763+09:00"
+generated: "2024-03-11T16:51:07.617557+09:00"

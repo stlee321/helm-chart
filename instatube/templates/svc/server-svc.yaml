@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.server.service.name }}
   namespace: {{.Values.namespace}}
 spec:
+  type: NodePort
   selector:
     app: {{ .Values.server.pod.label }}
   ports:
